@@ -1,0 +1,26 @@
+# Camera connection configuration.
+# Copy this file to config.yaml and fill in your deployment values.
+# config.yaml is excluded from the repository (.gitignore).
+
+# Cameras in "identifier: IP address" form.
+# The identifier is an arbitrary camera label; it appears in the output JSON.
+cameras:
+  "0015": 192.168.12.101
+  "0016": 192.168.12.102
+  "0017": 192.168.12.103
+  "0018": 192.168.12.104
+
+# ISAPI credentials (shared by all cameras).
+# Passing the password via the CAM_PASSWORD environment variable is recommended.
+credentials:
+  user: admin
+  password: ${CAM_PASSWORD}
+
+# WireGuard (optional section).
+#   auto_bring_up: false — the tunnel is managed externally and already up (default).
+#   auto_bring_up: true  — the tool brings the tunnel up itself;
+#                          in that case fill in interface and config_path.
+vpn:
+  auto_bring_up: false
+  # interface: wg0
+  # config_path: ./secrets/wg.conf

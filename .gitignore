@@ -1,0 +1,18 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Private data (do not commit)
+config.yaml
+secrets/
+
+# Working artifacts
+shots/
+*.jpg
+result.json
+
+# Exception: example image for the README
+!docs/
+!docs/*.jpg
